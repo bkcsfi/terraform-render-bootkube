@@ -97,7 +97,7 @@ resource "tls_cert_request" "client" {
   ip_addresses = [["${concat(
     var.etcd_server_ip_addresses,
     list(
-      ""127.0.0.1",
+      "127.0.0.1",
     ))}"]
   ]
 
@@ -142,7 +142,7 @@ resource "tls_cert_request" "server" {
   ip_addresses = [["${concat(
     var.etcd_server_ip_addresses,
     list(
-      ""127.0.0.1",
+      "127.0.0.1",
     ))}"]
   ]
 
