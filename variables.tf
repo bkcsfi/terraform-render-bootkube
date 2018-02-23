@@ -13,6 +13,11 @@ variable "etcd_servers" {
   type        = "list"
 }
 
+variable "etcd_server_ip_addresses" {
+  description = "List of etc server ip addresses"
+  type        = "list"
+}
+
 variable "asset_dir" {
   description = "Path to a directory where generated assets should be placed (contains secrets)"
   type        = "string"
