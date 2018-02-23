@@ -94,8 +94,11 @@ resource "tls_cert_request" "client" {
     organization = "etcd"
   }
 
-  ip_addresses = [
-    "127.0.0.1",
+  ip_addresses = [["${concat(
+    var.etcd_server_ip_addresses,
+    list(
+      ""127.0.0.1",",
+    ))}"]
   ]
 
   dns_names = ["${concat(
@@ -136,8 +139,11 @@ resource "tls_cert_request" "server" {
     organization = "etcd"
   }
 
-  ip_addresses = [
-    "127.0.0.1",
+  ip_addresses = [["${concat(
+    var.etcd_server_ip_addresses,
+    list(
+      ""127.0.0.1",",
+    ))}"]
   ]
 
   dns_names = ["${concat(
